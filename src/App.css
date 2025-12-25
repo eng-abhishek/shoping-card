@@ -32,7 +32,25 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.cart-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.h-200 {
+  height: 300px;
+
 }

@@ -1,0 +1,102 @@
+# The Code You’re Confused About
+const totalPrice = cart.reduce(
+  (sum, item) => sum + item.price * item.qty,
+  0
+);
+
+🧠 Think Like This (Real Life Example)
+
+Imagine your cart looks like this:
+
+cart = [
+  { name: "Nike", price: 2000, qty: 2 },
+  { name: "Adidas", price: 3000, qty: 1 }
+];
+
+What is total price?
+Nike → 2000 × 2 = 4000
+Adidas → 3000 × 1 = 3000
+
+TOTAL = 7000
+
+🔹 What is reduce()?
+
+reduce() means:
+
+# “Take all items and reduce them to ONE value”
+
+Here → that one value = total price
+
+🪜 Step-by-Step Breakdown
+🔹 Step 1: Start value (0)
+0
+
+
+This is the initial sum
+
+🔹 Step 2: First item (Nike)
+sum = 0
+item = { price: 2000, qty: 2 }
+
+sum + (2000 × 2)
+= 0 + 4000
+= 4000
+
+🔹 Step 3: Second item (Adidas)
+sum = 4000
+item = { price: 3000, qty: 1 }
+
+sum + (3000 × 1)
+= 4000 + 3000
+= 7000
+
+🔹 Final result
+totalPrice = 7000
+
+🧩 What Each Part Means
+(sum, item) => sum + item.price * item.qty
+
+Part	Meaning
+sum	Running total (starts from 0)
+item	Current cart item
+item.price * item.qty	Item total
+sum + ...	Add to total
+🔁 Same Logic Written in Normal Loop (For Clarity)
+let total = 0;
+
+for (let item of cart) {
+  total = total + item.price * item.qty;
+}
+
+
+👉 reduce() is just a shorter & cleaner version of this.
+
+🧠 Key Rule to Remember
+
+Never store total in state
+Always calculate from cart
+
+Because:
+
+Cart changes → total auto updates
+
+No bugs
+
+Best practice
+
+🧪 Mini Example (Try in Console)
+const cart = [
+  { price: 100, qty: 2 },
+  { price: 50, qty: 3 }
+];
+
+const total = cart.reduce(
+  (sum, item) => sum + item.price * item.qty,
+  0
+);
+
+console.log(total); // 350
+
+🎯 ONE-LINE SUMMARY
+
+reduce() adds (price × qty) of each cart item to give total price
